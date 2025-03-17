@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "npm install vite && ENV PATH ./node_modules/.bin:$PATH && npm run preview"
+    "start": "npm install vite && export PATH='./node_modules/.bin:$PATH' && npm run preview"
   },
   "dependencies": {
     "react": "^19.0.0",
