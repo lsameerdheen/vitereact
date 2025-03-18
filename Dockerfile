@@ -7,6 +7,7 @@ RUN chmod -R 777 /home/viteuser
 USER viteuser
 WORKDIR /home/viteuser/app
 CMD ls -alt 
+CMD find / -name "*.json" 
 RUN whoami
 COPY package*.json .
 COPY *.* .
