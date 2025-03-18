@@ -14,7 +14,8 @@ COPY package*.json ./
 COPY . .
 
 RUN npm install
-
+RUN apk update
+RUN apk sudo
 RUN chmod 777 /app
 RUN chown -R node:node /app/node_modules
 USER node
