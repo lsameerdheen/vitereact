@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "pwd && ls -lR && npm run dev"
+    "start": "npm run preview"
   },
   "dependencies": {
     "react": "^19.0.0",
