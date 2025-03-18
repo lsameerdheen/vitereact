@@ -21,19 +21,17 @@ USER root
 # set the working directory to /app
 WORKDIR /app
 
+# install dependencies
+RUN npm install
+
 # change the ownership of the /app directory to the app user
 # chown -R <user>:<group> <directory>
 # chown command changes the user and/or group ownership of for given file.
 RUN chown -R node:node .
-RUN chown -R root:root .
-
-USER root
-
-# install dependencies
-RUN npm install
 
 # change the user back to the app user
 USER node
+
 # copy the rest of the files to the working directory
 COPY . .
 EXPOSE 8080
