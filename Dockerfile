@@ -17,20 +17,15 @@ COPY package*.json ./
 # and thus the app can't access the files and throws an error -> EACCES: permission denied
 # to avoid this, change the ownership of the files to the root user
 USER root
-
+RUN npm install
 # set the working directory to /app
 WORKDIR /app
+RUN chgrp -R 0 /app && \
+    chmod -R g=u /app
+USER 1001
 
-# install dependencies
-RUN npm install
-
-# change the ownership of the /app directory to the app user
-# chown -R <user>:<group> <directory>
-# chown command changes the user and/or group ownership of for given file.
-RUN chown -R node:node .
-
-# change the user back to the app user
-USER node
+RUN chown -R 1001:0 .
+RUN chmod 775 /app
 
 # copy the rest of the files to the working directory
 COPY . .
