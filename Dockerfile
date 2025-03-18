@@ -18,6 +18,9 @@ COPY package*.json ./
 # to avoid this, change the ownership of the files to the root user
 USER root
 
+# set the working directory to /app
+WORKDIR /app
+
 # change the ownership of the /app directory to the app user
 # chown -R <user>:<group> <directory>
 # chown command changes the user and/or group ownership of for given file.
