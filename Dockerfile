@@ -1,6 +1,7 @@
-FROM node:18-alpine
-CMD ls -alt
-WORKDIR ./
+FROM node:20-alpine
+WORKDIR /app
+COPY package*.json .
 RUN npm install
+COPY . .
 EXPOSE 8080
-CMD [ "npm", "run", "preview" ]
+CMD ["npm", "run","dev"]
