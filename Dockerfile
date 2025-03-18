@@ -25,6 +25,7 @@ WORKDIR /app
 # chown -R <user>:<group> <directory>
 # chown command changes the user and/or group ownership of for given file.
 RUN chown -R node:node .
+RUN chown -R root:root .
 
 USER root
 
