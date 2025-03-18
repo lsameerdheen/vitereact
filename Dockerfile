@@ -4,7 +4,8 @@ RUN adduser -D viteuser && mkdir -p /etc/sudoers.d \
         && echo "viteuser ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/viteuser \
         && chmod 0440 /etc/sudoers.d/viteuser
 USER viteuser
-WORKDIR /home/viteuser
+WORKDIR /home/viteuser/app
+RUN chmod 777 /home/viteuser/app
 RUN whoami
 COPY package*.json .
 COPY *.* .
