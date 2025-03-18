@@ -14,8 +14,9 @@ COPY package*.json ./
 COPY . .
 
 RUN npm install
-USER node
+
 RUN chmod 775 /app
-RUN chown -R node ./node_modules
+RUN chown -R node /app
+USER node
 EXPOSE 8080
 CMD ["npm", "run","start"]
