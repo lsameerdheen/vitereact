@@ -5,7 +5,7 @@ RUN adduser -D viteuser && mkdir -p /etc/sudoers.d \
         && chmod 0440 /etc/sudoers.d/viteuser
 USER viteuser
 WORKDIR /home/viteuser/app
-RUN chmod -R 777 *
+RUN chmod -R 777 /home/viteuser
 RUN whoami
 COPY package*.json .
 COPY *.* .
