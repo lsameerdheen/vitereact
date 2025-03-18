@@ -1,8 +1,12 @@
 FROM node:20-alpine
 USER root
-RUN useradd -ms /bin/bash viteuser
+RUN adduser -D viteuser && mkdir -p /etc/sudoers.d \
+        && echo "viteuser ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/viteuser \
+        && chmod 0440 /etc/sudoers.d/viteuser
 USER viteuser
 WORKDIR /home/viteuser
+RUN whoami
+RUN sudo whoami
 COPY package*.json .
 COPY *.* .
 RUN npm install 
