@@ -6,7 +6,6 @@ RUN adduser -D viteuser && mkdir -p /etc/sudoers.d \
 USER viteuser
 WORKDIR /home/viteuser
 RUN whoami
-RUN sudo whoami
 COPY package*.json .
 COPY *.* .
 RUN npm install 
