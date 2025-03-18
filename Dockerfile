@@ -26,12 +26,13 @@ WORKDIR /app
 # chown command changes the user and/or group ownership of for given file.
 RUN chown -R node:node .
 
-# change the user back to the app user
-USER node
+USER root
 
 # install dependencies
 RUN npm install
 
+# change the user back to the app user
+USER node
 # copy the rest of the files to the working directory
 COPY . .
 EXPOSE 8080
