@@ -1,6 +1,6 @@
 FROM node:18-alpine
 USER root
- create a user with permissions to run the app
+#create a user with permissions to run the app
 # -S -> create a system user
 # -G -> add the user to a group
 # This is done to avoid running the app as root
