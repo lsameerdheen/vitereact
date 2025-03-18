@@ -1,5 +1,8 @@
 FROM node:20-alpine
-WORKDIR /app
+USER ROOT
+RUN useradd -ms /bin/bash viteuser
+USER viteuser
+WORKDIR /home/viteuser
 COPY package*.json .
 COPY *.* .
 RUN npm install 
