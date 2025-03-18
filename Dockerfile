@@ -11,7 +11,9 @@ CMD find / -name "*.json"
 RUN whoami
 COPY package*.json .
 COPY *.* .
+USER root
 RUN npm install 
 COPY . .
 EXPOSE 8080
+USER viteuser
 CMD ["npm", "run","start"]
