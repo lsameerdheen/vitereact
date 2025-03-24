@@ -1,0 +1,18 @@
+.movie-card {
+    width: 200px;
+    text-align: center;
+  }
+  
+  .movie-card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .book-button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: white;
+    background-color: #e50914;
+    border: none;
+    cursor: pointer;
+  }
